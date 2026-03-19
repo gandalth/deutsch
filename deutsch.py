@@ -25,7 +25,7 @@ def main():
         c = int(c_str)
         assert(c < len(chl))
     except:
-        print("Invalud input.")
+        print("Invalid input.")
         sys.exit(1)
 
     qc = QuantumCircuit(2)
