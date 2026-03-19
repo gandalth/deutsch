@@ -52,8 +52,8 @@ def main():
     probs = sv.probabilities_dict()
 
     p0 = sum(v for k, v in probs.items() if k[1] == '0')  # first qubit
-    p1 = sum(v for k, v in probs.items() if k[1] == '1')
-    if p0 > p1:
+
+    if p0 > 0.99: # Check is zero-state has probability \approx 1.
         print(f"Function {chl[c]} has constant output.")
     else:
         print(f"Function {chl[c]} has balanced output.")
