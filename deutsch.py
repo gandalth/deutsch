@@ -73,7 +73,6 @@ def create_oracle(challenge:int) -> QuantumCircuit:
         o.x(0)
     else:
         print("Oracle not implemented");
-        o.barrier()
     return o
         
 if __name__ == "__main__":
