@@ -1,10 +1,14 @@
 
-A minimal and beginner-friendly implementation of Deutsch algorithm plus
-a minimal and beginner-friendly implementation of Deutsch-Jozsa algorithm
-for two-bit input functions.
+A set of  minimal and beginner-friendly implementations
+of quantum algorithms for local use with qiskit.
 
-Both algorithm use Qiskit.
 No backend access to QPU or simulator are needed due to use of statevectors.
 
-Run using "python deutsch.py or python deutsch-jozsa.py"
-in an environment providing Qiskit.
+Currently implemented:
+- Deutsch Algorithm
+- Deutsch-Jozsa Algorithm for two-bit input functions
+- Bernstein-Vazirani Algorithm
+
+Run using
+"python deutsch.py, python deutsch-jozsa.py, python bernstein-vazirani.py"
+in an environment providing qiskit.
