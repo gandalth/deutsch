@@ -1,4 +1,3 @@
-
 A set of  minimal and beginner-friendly implementations
 of quantum algorithms for local use with qiskit.
 
@@ -9,7 +8,7 @@ Currently implemented:
 - Deutsch-Jozsa Algorithm for two-bit input functions
 - Bernstein-Vazirani Algorithm
 - Phase-kickback demonstration
-- QFT demonstration with n = 4 / N = 16.
+- Quantum Fourier Transform (QFT) demonstration (n = 4 / N = 16)
 
 Run using
   python deutsch.py,
