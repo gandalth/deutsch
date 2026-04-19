@@ -8,7 +8,7 @@ Currently implemented:
 - Deutsch Algorithm
 - Deutsch-Jozsa Algorithm for two-bit input functions
 - Bernstein-Vazirani Algorithm
-- Phase-kickback
+- Phase kickback
 - Quantum Fourier Transform (QFT) demonstration (n = 4 / N = 16)
 - Quantum Phase Estimation (QPE) for a single qbit
 - Amplitude amplification for a single "good state"
@@ -72,8 +72,7 @@ The Bernstein-Vazirani Algorithm demonstrates the advantage of quantum
 computers by efficiently recovering a secret bitstring s of length
 n. It achieves this by evaluating an oracle for the function
 XOR_{i=0}^{n-1}(x_i * s_i) exactly once. This is remarkable, as a
-classical algorithm would require n different evaluations of this
-function.
+classical algorithm would require n evaluations of this function.
 
 Our implementation lets the user enter a secret binary string and
 builds the corresponding oracle which is opaque to the
@@ -84,6 +83,24 @@ bits length and increase the length step by step.
 Run the algorithm using
 ```
 python bernstein-vazirani.py
+```
+## Phase kickback
+
+Phase kickback refers to the effect that, in a controlled unitary
+operation, a phase applied to the target qubit can be transferred to
+the control qubit if the target is in an eigenstate of that operation.
+This allows phase information to be encoded in control qubits and is
+used in algorithms such as the Deutsch Algorithm or Bernstein–Vazirani Algorithm.
+
+Our implementation shows the phase applied to the controlling qbit's
+states |0> and |1> explicitly. It lets the user choose the function to
+be implemented by the unitary from this list: 'f(x) = 0', 'f(x) = 1',
+'f(x) = x', 'f(x) = not_x'. The key insight is that the resulting
+state reads 1/sqrt(2) * ((-1)^{f(0)}|0> + (-1)^{f(1)}|1>).
+
+Run the algorithm using
+```
+python phase-kickback.py
 ```
 
 ## Other algorithm descriptions TBD
