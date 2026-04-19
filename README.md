@@ -8,7 +8,7 @@ Currently implemented:
 - Deutsch Algorithm
 - Deutsch-Jozsa Algorithm for two-bit input functions
 - Bernstein-Vazirani Algorithm
-- Phase-kickback demonstration
+- Phase-kickback
 - Quantum Fourier Transform (QFT) demonstration (n = 4 / N = 16)
 - Quantum Phase Estimation (QPE) for a single qbit
 - Amplitude amplification for a single "good state"
@@ -45,7 +45,7 @@ Run the algorithm using
 python deutsch.py
 ```
 
-## Deutsch-Jozsa Algorithm
+## Deutsch-Jozsa Algorithm for two-bit input functions
 
 The Deutsch-Jozsa Algorithm can be understood as an extension of the
 Deutsch Algorithm to functions with multiple input bits. Again, the
