@@ -103,4 +103,25 @@ Run the algorithm using
 python phase_kickback.py
 ```
 
+## Quantum Fourier Transformation (QFT)
+
+Quantum Fourier Transformation (QFT) is the quantum analogue of
+Discrete Fourier Transformation (DFT). It works on qbits and is of
+practical interest due to two reasons: It is used as a component in
+many emerging real-world applications, and moreover, it requires lower
+complexity than both DFT and Fast Fourier Transformation (FFT).
+
+Our implementation uses n = 4 qbits and lets the user choose from four
+input signals to illustrate the basic correspondences of QFT. There
+are two signals with amplitude spikes, which will be transformed to a
+superposition of uniform amplitude and a phase ramp with constant step
+size. The other two possible input signals are uniform superpositions
+with a phase ramp of constant step size. These input signals will
+result in amplitude spikes at the output of the QFT.
+
+Run the algorithm using
+```
+python qft.py
+```
+
 ## Other algorithm descriptions TBD
