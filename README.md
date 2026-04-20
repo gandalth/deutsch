@@ -124,4 +124,21 @@ Run the algorithm using
 python qft.py
 ```
 
+## Quantum Phase Estimation (QPE)
+
+Similar to QFT, Quantum Phase Estimation (QPE) is an algorithm of high
+interest as it serves as a component in many quantum algorithms which
+are becoming increasingly popular (e.g. Shor's Algorithm or Quantum
+Counting). In essence, QPE is used to estimate the phase associated
+with an eigenvalue of a unitary operator by encoding it into a quantum
+state and extracting it via interference and measurement. Note: this "uses"
+phase kickback as observed before.
+
+In our implementation we choose the controlled-phase operator as a an
+easy example of a unitary operator. We prepare the target qbit in |1>
+state, which is an eigenstate of this operator. The user can choose
+the angle of the operator and can observe how QPE uses the
+probabibilites of the controlling qbits state vector to infer the
+angle.
+
 ## Other algorithm descriptions TBD
