@@ -141,4 +141,10 @@ the angle of the operator and can observe how QPE uses the
 probabibilites of the controlling qbits state vector to infer the
 angle.
 
+Run the algorithm using
+```
+python qpe_single_qbit.py
+```
+
+
 ## Other algorithm descriptions TBD
