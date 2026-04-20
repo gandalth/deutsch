@@ -8,10 +8,10 @@ Currently implemented:
 - Deutsch Algorithm
 - Deutsch-Jozsa Algorithm for two-bit input functions
 - Bernstein-Vazirani Algorithm
-- Phase kickback
+- Phase Kickback
 - Quantum Fourier Transform (QFT) demonstration (n = 4 / N = 16)
 - Quantum Phase Estimation (QPE) for a single qbit
-- Amplitude amplification for a single "good state"
+- Amplitude Amplification for a single "good state"
 - Variational Quantum Eigensolver (VQE) for up to 3 qbits
 
 # Installation
@@ -84,7 +84,7 @@ Run the algorithm using
 ```
 python bernstein-vazirani.py
 ```
-## Phase kickback
+## Phase Kickback
 
 Phase kickback refers to the effect that, in a controlled unitary
 operation, a phase applied to the target qubit can be transferred to
@@ -146,5 +146,25 @@ Run the algorithm using
 python qpe_single_qbit.py
 ```
 
+## Amplitude Amplification
+
+Amplitude Amplification is an iterative search algorithm that
+alternates between an oracle, which marks the searched / good states
+via a phase flip, and a diffusion operator, which amplifies their
+amplitudes by reflecting the state about the average. Assuming only
+one good state, this operation can be understood as a rotation towards
+the searched states in sqrt(N) steps, with N being the total number of
+states. Compared to classical search algorithms, amplitude
+amplification provides a quadratic speedup (O(sqrt(N)) over O(N)).
+
+Our implementation uses exactly one good state that the user
+defines. It shows the probabilities of the qbit states over the
+iterations and stops when the algorithm converges to a specific state
+or the maximum number of iterations is reached.
+
+Run the algorithm using
+```
+python amplitude_amplification.py
+```
 
 ## Other algorithm descriptions TBD
