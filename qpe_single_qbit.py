@@ -11,7 +11,7 @@ import sys
 
 def main():
     print(f"""
-    Single-qbit Quantum Phase Estimation (QPE) using state vector probabilities.
+    Single-qubit Quantum Phase Estimation (QPE) using state vector probabilities.
     """)
     ang_str = input(f"Provide your input as an angle between 0 and pi: ")
     try:
@@ -23,10 +23,10 @@ def main():
     
     qc = QuantumCircuit(2)
     qc.h(0)
-    # Prepare second qbit as |1> to allow for phase kickback
+    # Prepare second qubit as |1> to allow for phase kickback
     qc.x(1)
     
-    # Apply controlled phase to second qbit
+    # Apply controlled phase to second qubit
     qc.cp(ang, 0, 1);
     qc.h(0)
 

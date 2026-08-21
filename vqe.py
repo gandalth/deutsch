@@ -22,7 +22,7 @@ def main():
     print("""
     Simple demonstration of Variational Quantum Eigensolver (VQE).
     Limitations:
-    - Up to 3 qbits
+    - Up to 3 qubits
     - Random search
     """)
 

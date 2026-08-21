@@ -70,7 +70,7 @@ def create_oracle(target):
 def mcz(n):
     qc = QuantumCircuit(n)
 
-    # Apply Z = HXH on qbit n-1. Use control structure from mcx().
+    # Apply Z = HXH on qubit n-1. Use control structure from mcx().
     qc.h(n - 1)
     qc.mcx(list(range(n - 1)), n - 1)
     qc.h(n - 1)

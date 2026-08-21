@@ -37,7 +37,7 @@ def main():
 
     qc = QuantumCircuit(3)
 
-    # Prepare qbits in |0> and |1> state, resp.
+    # Prepare qubits in |0> and |1> state, resp.
 
     qc.x(2)
 

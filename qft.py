@@ -19,7 +19,7 @@ def main():
            'Amplitude spike',
            'Amplitude spike']
     print(f"""
-    Quantum Fourier Transformation (QFT) with n = 4 qbits and N = 16 states.
+    Quantum Fourier Transformation (QFT) with n = 4 qubits and N = 16 states.
     The following input signals are available for demonstration (MSB left):
     0: {inp[0]}
     1: {inp[1]}
@@ -73,9 +73,9 @@ def create_qft(n: int, swap=False) -> QuantumCircuit:
 
 def create_input(n: int, choice: int) -> QuantumCircuit:
     if choice == 0:
-        s = create_amplitude_spike(n, 0) # Set zero-th qbit for k = 1
+        s = create_amplitude_spike(n, 0) # Set zero-th qubit for k = 1
     if choice == 1:
-        s = create_amplitude_spike(n, 1) # Set first qbit for k = 2
+        s = create_amplitude_spike(n, 1) # Set first qubit for k = 2
     if choice == 2:
         s = create_phase_ramp(n, 1)
     if choice == 3:
@@ -85,7 +85,7 @@ def create_input(n: int, choice: int) -> QuantumCircuit:
 def create_phase_ramp(n: int, k: int) -> QuantumCircuit:
     s = QuantumCircuit(n)
 
-    # Put all qbits in superposition
+    # Put all qubits in superposition
     for i in range(n):
         s.h(i)
 

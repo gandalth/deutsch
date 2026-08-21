@@ -26,7 +26,7 @@ def main():
     l  = len(s)
     qc = QuantumCircuit(l + 1)
 
-    # Prepare qbits in |0> (input registers) and |1> (aux register) state, resp.
+    # Prepare qubits in |0> (input registers) and |1> (aux register) state, resp.
 
     qc.x(l)
 

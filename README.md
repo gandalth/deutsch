@@ -10,9 +10,9 @@ Currently implemented:
 - Bernstein-Vazirani Algorithm
 - Phase Kickback
 - Quantum Fourier Transform (QFT) demonstration (n = 4 / N = 16)
-- Quantum Phase Estimation (QPE) using a single qbit
+- Quantum Phase Estimation (QPE) using a single qubit
 - Amplitude Amplification for a single solution
-- Variational Quantum Eigensolver (VQE) for up to 3 qbits
+- Variational Quantum Eigensolver (VQE) for up to 3 qubits
 
 # Installation
 
@@ -40,13 +40,13 @@ algorithm evaluating it.
 The figure shows a schematic overview of our implementation for the
 Deutsch Algorithm. Without presenting a detailed analysis, we point
 out that we use an Pauli $X$ Gate to flip the lower bit and $H$
-(Hadamard) gates to prepare qbits in states $\vert +\rangle$ and $\vert
--\rangle$, respectively. These qbits are in superposition states. This
+(Hadamard) gates to prepare qubits in states $\vert +\rangle$ and $\vert
+-\rangle$, respectively. These qubits are in superposition states. This
 is one of the key enablers which allows the Deutsch algorithm to
 categorize the function with only one query. The other enabler is the
 phase-kickback phenomenon, which we will cover below.  The output to
 decide on whether $f(x)$ is balanced or constant is provided by
-measuring qbit 0. The lower qbit is not of interest and can be
+measuring qubit 0. The lower qubit is not of interest and can be
 discarded.
 
 <p align="center">
@@ -99,7 +99,7 @@ $f(x_0, x_1) = x_1$, $f(x_0, x_1) = \overline{x_0}$, $f(x_0, x_1) =
 \overline{x_1}$, $f(x_0, x_1) = x_0 \oplus x_1$, $f(x_0, x_1) =
 \overline{x_0 \oplus x_1}$.  The script will prepare the oracle
 representing the selected function and the algorithm will evaluate it
-once using qbits in superposition.  Eventually, qbit 0 and qbit 1 will
+once using qubits in superposition.  Eventually, qubit 0 and qubit 1 will
 be measured. If the probability to measure '00' is (approximately) 1,
 we report "constant output", and otherwise "balanced output".
 
@@ -132,16 +132,16 @@ python bernstein-vazirani.py
 ## Phase Kickback
 
 Phase kickback refers to the effect that, in a controlled unitary
-operation, a function applied to the target qbit "kicks back" a
-function-dependent phase value onto the control qbit. This happens if
-the target qbit is an eigenvector of the unitary query gate that
-implements the function of interest. This allows control qbits to
+operation, a function applied to the target qubit "kicks back" a
+function-dependent phase value onto the control qubit. This happens if
+the target qubit is an eigenvector of the unitary query gate that
+implements the function of interest. This allows control qubits to
 carry phase information. It is an important phenomenon and is used in
 algorithms such as the Deutsch-Josza Algorithm. The figure shows our
 implementation demonstrating phase kickback. Note that this is
 essentially the Deutsch Algorithm, but without the Hadamard gate after
 the query gate. This allows to observe the phases applied to the
-controlling qbit on the final state vector: $1/\sqrt(2) \cdot
+controlling qubit on the final state vector: $1/\sqrt(2) \cdot
 ((-1)^{f(0)}\vert 0\rangle + (-1)^{f(1)}\vert 1\rangle)$.
 
 <p align="center">
@@ -162,13 +162,13 @@ python phase_kickback.py
 ## Quantum Fourier Transformation (QFT)
 
 Quantum Fourier Transformation (QFT) is the Discrete Fourier
-Transformation (DFT) used as a quantum operation. It works on qbits
+Transformation (DFT) used as a quantum operation. It works on qubits
 and is of practical interest due to two reasons: It is used as a
 component in many emerging real-world applications, and moreover, it
 requires lower complexity than both DFT and Fast Fourier
 Transformation (FFT).
 
-Our implementation uses n = 4 qbits and lets the user choose from four
+Our implementation uses n = 4 qubits and lets the user choose from four
 input signals to illustrate the basic correspondences of QFT. There
 are two signals with amplitude spikes, which will be transformed to a
 superposition of uniform amplitude and a phase ramp with constant step
@@ -192,15 +192,15 @@ state and extracting it via interference and measurement.
 Note: QPE makes use of the phase kickback phenomenon.
 
 In our implementation we choose the controlled-phase gate as the
-easiest example of a unitary operator. We prepare the target qbit in
+easiest example of a unitary operator. We prepare the target qubit in
 $\vert 1\rangle$ state, which is an eigenstate of the controlled-phase
 gate. The user can choose the angle the operator applies in the range
 $\[0;\pi\[$ and observe how QPE uses the probabilities of the controlling
-qbits state vector to infer the angle.  Note that it is the limited
+qubits state vector to infer the angle.  Note that it is the limited
 range of the angle which simplifies the problem such that it can be
-solved with a single controlling qbit without ambiguity. The problem
+solved with a single controlling qubit without ambiguity. The problem
 becomes much more interesting and real without this limitation. In
-that case the number of qbits, along wih repeated application of the
+that case the number of qubits, along wih repeated application of the
 operator, determine the precision with which the phase can be
 estimated.
 
@@ -221,7 +221,7 @@ states. Compared to classical search algorithms, Amplitude
 Amplification provides a quadratic speedup (O(sqrt(N)) over O(N)).
 
 Our implementation uses exactly one good state (the "solution") that the user
-defines. It shows the probabilities of the qbit states over the
+defines. It shows the probabilities of the qubit states over the
 iterations and stops when the algorithm converges to a specific state
 or the maximum number of iterations is reached.
 
@@ -244,7 +244,7 @@ in using a quantum system to efficiently represent and measure
 properties of states that would be exponentially costly to simulate
 classically.
 
-Our implementation uses random search and is limited to 3 qbits. We
+Our implementation uses random search and is limited to 3 qubits. We
 compute the exact ground state for comparison, track the VQE energy over
 iterations, and report the relative error. The Hamiltonian is specified
 as a sum of Pauli terms, and depending on whether complex coefficients
