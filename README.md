@@ -206,7 +206,7 @@ estimated.
 
 Run the script using
 ```
-python qpe_single_qbit.py
+python qpe_single_qubit.py
 ```
 
 ## Amplitude Amplification
